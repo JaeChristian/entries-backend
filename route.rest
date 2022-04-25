@@ -1,0 +1,28 @@
+GET http://localhost:8080/entries
+
+###
+
+GET http://localhost:8080/entries/626655c1e294ade6a26acf71
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+    "title": "Entry 03", 
+    "body": "I started developing a full-stack web app for diaries. I'm actually learning a lot, despite the fact that I am speedrunning these modules so I can get this database up and running already."    
+}
+ 
+###
+
+DELETE http://localhost:8080/entries/62665af2082f2d470a756d63
+
+###
+
+PATCH http://localhost:8080/entries/6266578be294ade6a26acf78
+Content-Type: application/json
+
+{
+    "title": "Entry 02"
+}

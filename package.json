@@ -1,0 +1,21 @@
+{
+  "name": "diary-app-backend",
+  "version": "1.0.0",
+  "description": "RESTful backend for diary app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "author": "Jeremiah Ortiz",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.3.1",
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.2"
+  }
+}
