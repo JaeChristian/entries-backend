@@ -5,8 +5,9 @@ const Entry = require("../models/entry");
 // Getting all
 router.get("/", async (req, res) => {
     try {
-        //Uses mongo db in an async manner then returns all entries
+        // Uses mongo db in an async manner
         const entries = await Entry.find();
+        // Send entries json with response
         res.json(entries);
     } catch (err) {
 
@@ -17,6 +18,7 @@ router.get("/", async (req, res) => {
 
 // Getting one
 router.get("/:id", getEntry, (req, res, next) => {
+    // res.entry is available because of getEntry middleware
     res.json(res.entry);
 });
 

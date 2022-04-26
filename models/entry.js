@@ -1,7 +1,4 @@
 const mongoose = require("mongoose");
-const uuid = require("uuid");
-
-//Allows node to interact with the entries schema
 
 // Settings entry schema
 const entrySchema = new mongoose.Schema({
@@ -9,7 +6,7 @@ const entrySchema = new mongoose.Schema({
         type: String
     },
     body: {
-
+        type: String
     },
     date: {
         type: Date,

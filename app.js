@@ -22,4 +22,8 @@ app.use(express.json());
 
 //Route handling for entries
 const entriesRouter = require("./routes/entries");
-app.use('/entries', entriesRouter);
+app.use("/entries", entriesRouter);
+
+const categoriesRouter = require("./routes/categories");
+app.use("/categories", categoriesRouter);
+
