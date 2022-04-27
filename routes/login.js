@@ -7,15 +7,16 @@ const jwt = require("jsonwebtoken");
 // Secret token for signing and verifying JWT
 const JWT_SECRET = "a;lfjghse;flgjsdfg';srlkgjhdtokhndfg;lghjkhsdfglksdjfhgsledfkgjh@slkdfjgh";
 
+// Endpoint for JWT authentication. Returns jwt token to access secured endpoints.
 router.post("/", async (req, res) => {
     let user;
     try {
-        // Get user object from the database using the username
-        user = await User.findOne({username: req.body.username}).lean();
+        // Get user object from the database using the email
+        user = await User.findOne({email: req.body.email}).lean();
         // Bcrypt compare requested password to the real users password
         if(await bcrypt.compare(req.body.password, user.password)){
             const token = jwt.sign({
-                id: user._id, username: user.username
+                id: user._id, email: user.email
             }, JWT_SECRET);
             return res.json({valid: true, token: token});
         } 

@@ -10,7 +10,7 @@ Content-Type: application/json
 
 ###
 // Get one user
-GET http://localhost:8080/users/62689429a41ff8e36a732a12
+GET http://localhost:8080/users/6268e2c5f4fdf4a54a8dd5d1
 
 ###
 
@@ -19,18 +19,20 @@ POST http://localhost:8080/users
 Content-Type: application/json
 
 {
+    "email": "admin@gmail.com",
     "username": "admin", 
     "password": "password"
 }
  
 ###
 // Update user
-PATCH http://localhost:8080/users/62689429a41ff8e36a732a12
+PATCH http://localhost:8080/users/6268e3d12dd3c5ad708838d7
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjg5NDI5YTQxZmY4ZTM2YTczMmExMiIsInVzZXJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY1MTAyODU3M30.VB8xFJ1HM4zIsDZuMNcdPKHrt1BKPke-B-zPo1Vcmec",
-    "username": "testing",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMDQyNjA2fQ.lfgMEBDrkRfqcTFnDXqVCEFP809QbcHNOoSGalnt0j8",
+    "email": "admin@gmail.com",
+    "username": "admin",
     "password": "password"
 }
 
@@ -41,6 +43,6 @@ POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-    "username": "testing",
-    "password": "adaadda"
+    "email": "admin@gmail.com",
+    "password": "password"
 }

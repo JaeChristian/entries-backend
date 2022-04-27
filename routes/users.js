@@ -2,15 +2,13 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const jwtAuthentication = require("../validation/jwtAuthentication");
 
-// JWT secret variables for verification
-const JWT_SECRET = "a;lfjghse;flgjsdfg';srlkgjhdtokhndfg;lghjkhsdfglksdjfhgsledfkgjh@slkdfjgh";
 // Salt used for generating JWT
 const salt = 10
 
 // Get all
-router.get("/", async (req, res) => {
+router.get("/", jwtAuthentication, async (req, res) => {
     try {
         // Find all users and send it in response
         const users = await User.find();
@@ -30,6 +28,7 @@ router.post("/", async (req, res) => {
     const password = await bcrypt.hash(req.body.password, salt);
 
     const user = new User({
+        email: req.body.email,
         username: req.body.username,
         password: password,
         visibility: 0
@@ -48,6 +47,9 @@ router.post("/", async (req, res) => {
 // Update one
 router.patch("/:id", getUser, jwtAuthentication, async (req, res) => {
     // If value in the request is null, it will not be updated
+    if(req.body.email != null) {
+        res.user.email = req.body.email;
+    }
     if(req.body.username != null) {
         res.user.username = req.body.username;
     }
@@ -91,20 +93,6 @@ async function getUser(req, res, next) {
     }
 
     res.user = user;
-    next();
-}
-
-// Middleware that handles jwt authentication and saves the decrypted jwt to res.authUser
-async function jwtAuthentication(req, res, next) {
-    let authUser;
-    try {
-        const {token} = req.body;
-        authUser = jwt.verify(token, JWT_SECRET);
-    } catch (err) {
-        return res.status(401).json({message: err.message});
-    }
-
-    res.authUser = authUser;
     next();
 }
 
