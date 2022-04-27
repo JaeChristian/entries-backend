@@ -1,0 +1,46 @@
+// Get all users
+GET http://localhost:8080/users/
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjg5ZDFhN2EyMGRjNjY2ODYzMzcyMyIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NTEwMjQ4NzZ9.HFLWj_xCrTcpUigumc6Moxd818BZn9_xKd9_87PiZP0",
+    "username": "admin",
+    "pee": "poo"
+}
+
+###
+// Get one user
+GET http://localhost:8080/users/62689429a41ff8e36a732a12
+
+###
+
+// Create new user
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+    "username": "admin", 
+    "password": "password"
+}
+ 
+###
+// Update user
+PATCH http://localhost:8080/users/62689429a41ff8e36a732a12
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjg5NDI5YTQxZmY4ZTM2YTczMmExMiIsInVzZXJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY1MTAyODU3M30.VB8xFJ1HM4zIsDZuMNcdPKHrt1BKPke-B-zPo1Vcmec",
+    "username": "testing",
+    "password": "adaada"
+}
+
+###
+// Login testing
+
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "username": "testing",
+    "password": "adaadda"
+}

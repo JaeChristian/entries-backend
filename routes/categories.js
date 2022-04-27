@@ -14,9 +14,12 @@ router.get("/", async (req, res) => {
         res.status(500).json({message: err.message});
     }
 });
-// Getting all by userId
+// Getting all categories by userId
 
 // Getting one by _id
+router.get("/:id", getCategory, async (req, res) => {
+    res.json(res.category);
+});
 
 // Creating one
 router.post("/", async (req, res) => {
@@ -39,4 +42,20 @@ router.post("/", async (req, res) => {
 // Updating one
 
 // Deleting one
+
+async function getCategory(req, res, next) {
+    let category;
+    try {
+        category = await Category.findById(req.params.id);
+        if (category == null) {
+            return res.status(404).json({message: `Cannot find category of id ${req.params.id}`});
+        }
+    } catch (err) {
+        return res.status(500).json({message: err.message});
+    }
+
+    res.category = category;
+    next();
+}
+
 module.exports = router;

@@ -27,3 +27,8 @@ app.use("/entries", entriesRouter);
 const categoriesRouter = require("./routes/categories");
 app.use("/categories", categoriesRouter);
 
+const usersRouter = require("./routes/users");
+app.use("/users", usersRouter);
+
+const loginRouter = require("./routes/login");
+app.use("/login", loginRouter);

@@ -88,4 +88,19 @@ async function getEntry(req, res, next) {
     next();
 }
 
+// Middleware that handles jwt authentication and saves the decrypted jwt to res.authUser
+async function jwtAuthentication(req, res, next) {
+    let authUser;
+    try {
+        const {token} = req.body;
+        authUser = jwt.verify(token, JWT_SECRET);
+    } catch (err) {
+        return res.status(401).json({message: err.message});
+    }
+
+    res.authUser = authUser;
+    next();
+}
+
+
 module.exports = router;

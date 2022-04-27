@@ -12,9 +12,13 @@
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
-  "engines": { "node":  "16.14.0"},
+  "engines": {
+    "node": "16.14.0"
+  },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.1",
     "morgan": "^1.10.0",
     "uuid": "^8.3.2"

@@ -1,11 +1,12 @@
+// Get all entries
 GET http://localhost:8080/entries
 
 ###
-
+// Get one entry
 GET http://localhost:8080/entries/626655c1e294ade6a26acf71
 
 ###
-
+// Create entry
 POST http://localhost:8080/entries
 Content-Type: application/json
 
@@ -15,14 +16,15 @@ Content-Type: application/json
 }
  
 ###
-
-DELETE http://localhost:8080/entries/62665af2082f2d470a756d63
+// Delete entry
+DELETE http://localhost:8080/entries/62688baf4c46ebefa7d1ad49
 
 ###
-
+// Update entry
 PATCH http://localhost:8080/entries/6266578be294ade6a26acf78
 Content-Type: application/json
 
 {
     "title": "Entry 02"
 }
+
