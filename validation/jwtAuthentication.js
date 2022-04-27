@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 // JWT secret variables for verification
 const JWT_SECRET = "a;lfjghse;flgjsdfg';srlkgjhdtokhndfg;lghjkhsdfglksdjfhgsledfkgjh@slkdfjgh";
 
-// Middleware filter for handling JWT authentication.
+// Middleware filter for handling JWT authentication. Requires a JWT token in request.
 // Returns a verified user's information to next middleware as res.authUser.
 async function jwtAuthentication(req, res, next) {
     let authUser;

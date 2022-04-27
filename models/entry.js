@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 // Settings entry schema
 const entrySchema = new mongoose.Schema({
+    userId: {
+        type: String,
+        required: true,
+    },
     title: {
         type: String
     },

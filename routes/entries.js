@@ -1,9 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const Entry = require("../models/entry");
+const jwtAuthentication = require("../validation/jwtAuthentication");
+
+/**
+ * TODO: 
+ * - implement JWT for delete and update post   
+ */
 
 // Getting all
-router.get("/", async (req, res) => {
+router.get("/", jwtAuthentication, async (req, res) => {
     try {
         // Uses mongo db in an async manner
         const entries = await Entry.find();
@@ -23,12 +29,14 @@ router.get("/:id", getEntry, (req, res, next) => {
 });
 
 // Creating one
-router.post("/", async (req, res) => {
+router.post("/", jwtAuthentication, async (req, res) => {
     // Creates new Entry object with request params
     const entry = new Entry({
+        userId: res.authUser.id,
         body: req.body.body,
         title: req.body.title
     });
+    console.log(res.authUser);
     try {
         // Saves to the db in async then returns the new entry
         const newEntry = await entry.save();
@@ -87,20 +95,5 @@ async function getEntry(req, res, next) {
     res.entry = entry;
     next();
 }
-
-// Middleware that handles jwt authentication and saves the decrypted jwt to res.authUser
-async function jwtAuthentication(req, res, next) {
-    let authUser;
-    try {
-        const {token} = req.body;
-        authUser = jwt.verify(token, JWT_SECRET);
-    } catch (err) {
-        return res.status(401).json({message: err.message});
-    }
-
-    res.authUser = authUser;
-    next();
-}
-
 
 module.exports = router;
