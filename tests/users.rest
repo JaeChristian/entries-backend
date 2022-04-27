@@ -31,7 +31,7 @@ Content-Type: application/json
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjg5NDI5YTQxZmY4ZTM2YTczMmExMiIsInVzZXJuYW1lIjoidGVzdGluZyIsImlhdCI6MTY1MTAyODU3M30.VB8xFJ1HM4zIsDZuMNcdPKHrt1BKPke-B-zPo1Vcmec",
     "username": "testing",
-    "password": "adaada"
+    "password": "password"
 }
 
 ###
