@@ -11,8 +11,8 @@ POST http://localhost:8080/entries
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMDQ2MTEwfQ.SfJHmx_opWSUUBLRIiOGsHJhwHJmyR6_CgpEhNfxNSU",
-    "title": "Entry 06", 
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMDgzMDkyLCJleHAiOjE2NTEwODMxNTJ9.w_ronippG3bwMAEGj_ln5OZPe0sE3Ed1ozE0cMz4LPc",
+    "title": "Posting with expiring token", 
     "body": "Admin posting"    
 }
  
