@@ -4,7 +4,11 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTU3OTI2LCJleHAiOjE2NTE3NjI3MjZ9.A7Bi7N3wspXb29DlSYLb-g7ah7RrLK84beEU6bEmIZo
 
 ###
+// Get all entries for user
+GET http://localhost:8080/entries/user/6268e2c5f4fdf4a54a8dd5d1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTU3OTI2LCJleHAiOjE2NTE3NjI3MjZ9.A7Bi7N3wspXb29DlSYLb-g7ah7RrLK84beEU6bEmIZo
 
+###
 // Get one entry
 GET http://localhost:8080/entries/626655c1e294ade6a26acf71
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTMwNjIwLCJleHAiOjE2NTE3MzU0MjB9.bj252RQghB-Bsza_SsdyP1lV8CQyMdND65dE6yklghE
@@ -13,11 +17,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxM
 // Create entry
 POST http://localhost:8080/entries
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTMwNjIwLCJleHAiOjE2NTE3MzU0MjB9.bj252RQghB-Bsza_SsdyP1lV8CQyMdND65dE6yklghE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MTE2MjM5NSwiZXhwIjoxNjUxNzY3MTk1fQ.py9Nj5pIm3KKd7rvPCmxZD-ekV9qaZIcBV1o5ood6cY
 
 {
-    "title": "Posting with expiring token", 
-    "body": "Admin posting"    
+    "title": "Posting using jxortiz", 
+    "body": "aha"    
 }
  
 ###
