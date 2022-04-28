@@ -10,8 +10,9 @@ const JWT_SECRET = "a;lfjghse;flgjsdfg';srlkgjhdtokhndfg;lghjkhsdfglksdjfhgsledf
 async function jwtAuthentication(req, res, next) {
     let authUser;
     try {
-        const {token} = req.body;
+        const token = req.headers.authorization?.split(' ')[1];
         authUser = jwt.verify(token, JWT_SECRET);
+        console.log(authUser);
     } catch (err) {
         return res.status(401).json({message: err.message});
     }

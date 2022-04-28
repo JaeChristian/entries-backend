@@ -15,6 +15,7 @@ router.get("/", jwtAuthentication, async (req, res) => {
         const entries = await Entry.find();
         // Send entries json with response
         res.json(entries);
+        console.log(res.authUser);
     } catch (err) {
 
         // Return with a 500 server error

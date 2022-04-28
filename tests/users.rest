@@ -1,9 +1,9 @@
 // Get all users
 GET http://localhost:8080/users/
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTMwNjIwLCJleHAiOjE2NTE3MzU0MjB9.bj252RQghB-Bsza_SsdyP1lV8CQyMdND65dE6yklghE
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjg5ZDFhN2EyMGRjNjY2ODYzMzcyMyIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NTEwMjQ4NzZ9.HFLWj_xCrTcpUigumc6Moxd818BZn9_xKd9_87PiZP0",
     "username": "admin",
     "pee": "poo"
 }
@@ -28,6 +28,7 @@ Content-Type: application/json
 // Update user
 PATCH http://localhost:8080/users/6268e3d12dd3c5ad708838d7
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTMwNjIwLCJleHAiOjE2NTE3MzU0MjB9.bj252RQghB-Bsza_SsdyP1lV8CQyMdND65dE6yklghE
 
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMDQyNjA2fQ.lfgMEBDrkRfqcTFnDXqVCEFP809QbcHNOoSGalnt0j8",

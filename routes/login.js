@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
                 id: user._id, email: user.email
             }, JWT_SECRET, {expiresIn: '7d'});
             return res.json({valid: true, token: token});
-        } 
+        }
 
         // If the return didn't happen, throw error
         throw err;

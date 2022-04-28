@@ -1,26 +1,32 @@
 // Get all entries
 GET http://localhost:8080/entries
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTMwNjIwLCJleHAiOjE2NTE3MzU0MjB9.bj252RQghB-Bsza_SsdyP1lV8CQyMdND65dE6yklghE
 
 ###
+
 // Get one entry
 GET http://localhost:8080/entries/626655c1e294ade6a26acf71
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTMwNjIwLCJleHAiOjE2NTE3MzU0MjB9.bj252RQghB-Bsza_SsdyP1lV8CQyMdND65dE6yklghE
 
 ###
 // Create entry
 POST http://localhost:8080/entries
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTMwNjIwLCJleHAiOjE2NTE3MzU0MjB9.bj252RQghB-Bsza_SsdyP1lV8CQyMdND65dE6yklghE
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMDgzMDkyLCJleHAiOjE2NTEwODMxNTJ9.w_ronippG3bwMAEGj_ln5OZPe0sE3Ed1ozE0cMz4LPc",
     "title": "Posting with expiring token", 
     "body": "Admin posting"    
 }
  
 ###
 // Delete entry
-DELETE http://localhost:8080/entries/62688baf4c46ebefa7d1ad49
+DELETE http://localhost:8080/entries/6268f5a1f249fdc82b26980c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTMwNjIwLCJleHAiOjE2NTE3MzU0MjB9.bj252RQghB-Bsza_SsdyP1lV8CQyMdND65dE6yklghE
 
 ###
+
 // Update entry
 PATCH http://localhost:8080/entries/6266578be294ade6a26acf78
 Content-Type: application/json
