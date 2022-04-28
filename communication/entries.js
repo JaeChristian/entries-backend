@@ -15,7 +15,21 @@ router.get("/", jwtAuthentication, async (req, res) => {
         const entries = await Entry.find();
         // Send entries json with response
         res.json(entries);
-        console.log(res.authUser);
+    } catch (err) {
+
+        // Return with a 500 server error
+        res.status(500).json({message: err.message})
+    }
+});
+
+// Getting all entries from a user
+router.get("/user/:userId", jwtAuthentication, async (req, res) => {
+    try {
+        const userId = req.params.userId
+        // Uses mongo db in an async manner
+        const entries = await Entry.find({userId: userId});
+        // Send entries json with response
+        res.json(entries);
     } catch (err) {
 
         // Return with a 500 server error
@@ -37,7 +51,6 @@ router.post("/", jwtAuthentication, async (req, res) => {
         body: req.body.body,
         title: req.body.title
     });
-    console.log(res.authUser);
     try {
         // Saves to the db in async then returns the new entry
         const newEntry = await entry.save();
@@ -49,7 +62,7 @@ router.post("/", jwtAuthentication, async (req, res) => {
 });
 
 // Updating one
-router.patch("/:id", getEntry, async (req, res) => {
+router.patch("/:id", getEntry, jwtAuthentication, async (req, res) => {
     // Makes sure that only non-null parameters are saved
     if (req.body.title != null) {
         res.entry.title = req.body.title;
@@ -57,13 +70,15 @@ router.patch("/:id", getEntry, async (req, res) => {
     if (req.body.body != null) {
         res.entry.body = req.body.body;
     } 
-    
+    if (res.authUser.id != res.entry.userId) {
+        return res.status(401).json({message: "unauthorized to update this post"});
+    }
     try {
         // Await on entry save
         const updatedEntry = await res.entry.save();
-        res.json(updatedEntry)
+        res.json(updatedEntry);
     } catch (err) {
-        res.status(400).json({message: err.message})
+        res.status(400).json({message: err.message});
     }
 });
 

@@ -21,14 +21,14 @@ db.once("open", () => console.log("Connected to Database"))
 app.use(express.json());
 
 //Route handling for entries
-const entriesRouter = require("./routes/entries");
+const entriesRouter = require("./communication/entries");
 app.use("/entries", entriesRouter);
 
-const categoriesRouter = require("./routes/categories");
+const categoriesRouter = require("./communication/categories");
 app.use("/categories", categoriesRouter);
 
-const usersRouter = require("./routes/users");
+const usersRouter = require("./communication/users");
 app.use("/users", usersRouter);
 
-const loginRouter = require("./routes/login");
+const loginRouter = require("./communication/login");
 app.use("/login", loginRouter);

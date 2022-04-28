@@ -1,7 +1,7 @@
 // Get all entries
 GET http://localhost:8080/entries
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTMwNjIwLCJleHAiOjE2NTE3MzU0MjB9.bj252RQghB-Bsza_SsdyP1lV8CQyMdND65dE6yklghE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTU3OTI2LCJleHAiOjE2NTE3NjI3MjZ9.A7Bi7N3wspXb29DlSYLb-g7ah7RrLK84beEU6bEmIZo
 
 ###
 

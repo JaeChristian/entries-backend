@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 // Secret token for signing and verifying JWT
-const JWT_SECRET = "a;lfjghse;flgjsdfg';srlkgjhdtokhndfg;lghjkhsdfglksdjfhgsledfkgjh@slkdfjgh";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Endpoint for JWT authentication. Returns jwt token to access secured endpoints.
 router.post("/", async (req, res) => {
@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
         // If the return didn't happen, throw error
         throw err;
     } catch (err) {
-        res.status(400).json({message: "invalid username/password"});
+        res.status(401).json({message: "invalid username/password"});
     }
 });
 

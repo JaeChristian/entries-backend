@@ -68,7 +68,7 @@ router.patch("/:id", getUser, jwtAuthentication, async (req, res) => {
             throw {message: "Password length must be more than or equal to 6"}
         // If id does not match, throw error
         if(res.authUser.id != res.user.id) {
-            throw {message: "You are not authenticated to edit this user"}
+            return res.status(401).json({message: "unauthorized to update this user"});
         }
         // Save updated user and send it with the response
         const updatedUser = await res.user.save();
