@@ -19,8 +19,8 @@ POST http://localhost:8080/users
 Content-Type: application/json
 
 {
-    "email": "admin@gmail.com",
-    "username": "admin", 
+    "email": "delete@gmail.com",
+    "username": "delete", 
     "password": "password"
 }
  
@@ -37,12 +37,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1Z
 }
 
 ###
+// Delete user
+DELETE  http://localhost:8080/users/626dad648011f54899443069
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNmRhZDY0ODAxMWY1NDg5OTQ0MzA2OSIsImVtYWlsIjoiZGVsZXRlQGdtYWlsLmNvbSIsImlhdCI6MTY1MTM1NTM3MCwiZXhwIjoxNjUxOTYwMTcwfQ.2WRlP_LFOMk0s_4I4NT4RcK0DLCxVCySuqdxIPsk360
+
+###
 // Login testing
 
 POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-    "email": "jxortiz15@gmail.com",
+    "email": "delete@gmail.com",
     "password": "password"
 }

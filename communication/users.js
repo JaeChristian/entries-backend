@@ -79,6 +79,17 @@ router.patch("/:id", getUser, jwtAuthentication, async (req, res) => {
 });
 
 // Delete one
+router.delete("/:id", getUser, jwtAuthentication, async (req, res) => {
+    if(res.authUser.id != res.user.id) {
+        return res.status(401).json({message: "unauthorized to update this user"});
+    }
+    try {
+        const deletedUser = await res.user.delete();
+        res.json(deletedUser);
+    } catch {
+        res.status(400).json({message: err.message})
+    }
+});
 
 // Middleware that gets the user and saves it in res.user
 async function getUser(req, res, next) {
