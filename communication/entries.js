@@ -3,11 +3,6 @@ const router = express.Router();
 const Entry = require("../models/entry");
 const jwtAuthentication = require("../validation/jwtAuthentication");
 
-/**
- * TODO: 
- * - implement JWT for delete and update post   
- */
-
 // Getting all
 router.get("/", jwtAuthentication, async (req, res) => {
     try {
@@ -83,10 +78,12 @@ router.patch("/:id", getEntry, jwtAuthentication, async (req, res) => {
 });
 
 // Deleting one
-router.delete("/:id", getEntry, async (req, res) => {
+router.delete("/:id", getEntry, jwtAuthentication, async (req, res) => {
     try {
+        if(res.authUser.id != res.entry.userId)
+            return res.status(401).json({message: "unauthorized to delete this post"});
         await res.entry.remove();
-        res.json({message: "deleted entry"})
+        res.json(res.entry)
     } catch (err) {
         res.status(500).json({message: err.message})
     }
