@@ -1,2 +1,34 @@
-
+//Get all categories
 GET http://localhost:8080/categories
+
+###
+// Get all categories of one user
+GET http://localhost:8080/categories/user/6268e2c5f4fdf4a54a8dd5d1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MTM1NzI0MCwiZXhwIjoxNjUxOTYyMDQwfQ.JgLt-8hTz2em5RbKdJ0zNiS-NZaiouvmddxfM2gay2U
+
+###
+// Create one
+POST http://localhost:8080/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MTM1NzI0MCwiZXhwIjoxNjUxOTYyMDQwfQ.JgLt-8hTz2em5RbKdJ0zNiS-NZaiouvmddxfM2gay2U
+Content-Type: application/json
+
+{
+    "name": "Thoughts"
+}
+
+###
+// Update one
+
+PATCH http://localhost:8080/categories/626db74d518432f26dad65db
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MTM1NzI0MCwiZXhwIjoxNjUxOTYyMDQwfQ.JgLt-8hTz2em5RbKdJ0zNiS-NZaiouvmddxfM2gay2U
+Content-Type: application/json
+
+{
+    "name": "To Do"
+}
+
+###
+// Delete one
+
+DELETE http://localhost:8080/categories/626dba5daf305a05b8abc97b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MTM1NzI0MCwiZXhwIjoxNjUxOTYyMDQwfQ.JgLt-8hTz2em5RbKdJ0zNiS-NZaiouvmddxfM2gay2U

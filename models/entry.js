@@ -6,6 +6,10 @@ const entrySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    categoryId: {
+        type: String,
+        default: ""
+    },
     title: {
         type: String
     },

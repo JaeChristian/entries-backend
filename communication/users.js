@@ -4,6 +4,11 @@ const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const jwtAuthentication = require("../validation/jwtAuthentication");
 
+/**
+ * Todo:
+ * - Implement security for get one endpoint
+ */
+
 // Salt used for generating JWT
 const salt = 10
 
@@ -19,7 +24,7 @@ router.get("/", jwtAuthentication, async (req, res) => {
 });
 
 // Get one
-router.get("/:id", getUser, async (req, res) => {
+router.get("/:id", jwtAuthentication, getUser, async (req, res) => {
     res.json(res.user);
 });
 

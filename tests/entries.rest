@@ -10,7 +10,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxM
 
 ###
 // Get one entry
-GET http://localhost:8080/entries/626655c1e294ade6a26acf71
+GET http://localhost:8080/entries/626ac2a6cf46edfb3b272b72
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTMwNjIwLCJleHAiOjE2NTE3MzU0MjB9.bj252RQghB-Bsza_SsdyP1lV8CQyMdND65dE6yklghE
 
 ###
@@ -26,7 +26,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1Z
  
 ###
 // Delete entry
-DELETE http://localhost:8080/entries/626dab4a8411ce17314e8bf0
+DELETE http://localhost:8080/entries/626ac2a6cf46edfb3b272b72
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MTM1NDQ2NiwiZXhwIjoxNjUxOTU5MjY2fQ.llfzOK-hb25Nu4U2tOSDNzQQrYFezqzAJVZSwBP7Dfc
 
 ###

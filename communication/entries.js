@@ -3,6 +3,11 @@ const router = express.Router();
 const Entry = require("../models/entry");
 const jwtAuthentication = require("../validation/jwtAuthentication");
 
+/**
+ * Todo:
+ * - Implement security for get one endpoint
+ */
+
 // Getting all
 router.get("/", jwtAuthentication, async (req, res) => {
     try {
@@ -65,6 +70,9 @@ router.patch("/:id", getEntry, jwtAuthentication, async (req, res) => {
     if (req.body.body != null) {
         res.entry.body = req.body.body;
     } 
+    if (req.body.categoryId != null) {
+        res.entry.categoryId = req.body.categoryId;
+    }
     if (res.authUser.id != res.entry.userId) {
         return res.status(401).json({message: "unauthorized to update this post"});
     }
@@ -82,8 +90,8 @@ router.delete("/:id", getEntry, jwtAuthentication, async (req, res) => {
     try {
         if(res.authUser.id != res.entry.userId)
             return res.status(401).json({message: "unauthorized to delete this post"});
-        await res.entry.remove();
-        res.json(res.entry)
+        const deletedEntry = await res.entry.remove();
+        res.json(deletedEntry)
     } catch (err) {
         res.status(500).json({message: err.message})
     }
@@ -100,7 +108,7 @@ async function getEntry(req, res, next) {
             return res.status(404).json({message: "Cannot find entry."})
         }
     } catch (err) {
-        return res.status(500).json({message: err.message})
+        return res.status(500).json({message: err.message});
     }
 
     // Adds entry object to res for easy access in API routes

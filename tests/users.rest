@@ -38,8 +38,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1Z
 
 ###
 // Delete user
-DELETE  http://localhost:8080/users/626dad648011f54899443069
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNmRhZDY0ODAxMWY1NDg5OTQ0MzA2OSIsImVtYWlsIjoiZGVsZXRlQGdtYWlsLmNvbSIsImlhdCI6MTY1MTM1NTM3MCwiZXhwIjoxNjUxOTYwMTcwfQ.2WRlP_LFOMk0s_4I4NT4RcK0DLCxVCySuqdxIPsk360
+DELETE  http://localhost:8080/users/626daef8da54dce26ee0cd57
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MTE2MjM5NSwiZXhwIjoxNjUxNzY3MTk1fQ.py9Nj5pIm3KKd7rvPCmxZD-ekV9qaZIcBV1o5ood6cY
 
 ###
 // Login testing
