@@ -2,6 +2,7 @@ const express = require("express");
 const { update } = require("../models/category");
 const router = express.Router();
 const Category = require("../models/category");
+const Entry = require("../models/entry");
 const jwtAuthentication = require("../validation/jwtAuthentication");
 
 /**
@@ -33,6 +34,26 @@ router.get("/user/:userId", jwtAuthentication, async (req, res) => {
         }
         // Find category
         const categories = await Category.find({userId: userId});
+        // Send entries json with response
+        res.json(categories);
+    } catch (err) {
+        // Return with a 500 server error
+        res.status(500).json({message: err.message})
+    }
+});
+
+// Getting all entries from a category
+router.get("/category/:id", getCategory, jwtAuthentication, async (req, res) => {
+    try {
+        //Getting userId from url
+        const categoryId = res.category.id
+        //console.log(categoryId, "category id");
+        //If jwt user does not match userId -> unauthorized
+        if(res.authUser.id != res.category.userId) {
+            return res.status(401).json({message: "unauthorized"});
+        }
+        // Find category
+        const categories = await Entry.find({categoryId: categoryId});
         // Send entries json with response
         res.json(categories);
     } catch (err) {

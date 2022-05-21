@@ -1,7 +1,7 @@
 // Get all users
 GET http://localhost:8080/users/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMTYyMzgyLCJleHAiOjE2NTE3NjcxODJ9.7UeQtUK_4YYOTdpMY44cUAA7UvYfJ9IVIVrTXeY4rcg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MzA5NzcwMiwiZXhwIjoxNjUzNzAyNTAyfQ.LbPACuFYvCXfHG7ACS-LbC1iIE702X0McUUiv-Obmi8
 
 {
     "username": "admin",
@@ -48,6 +48,6 @@ POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-    "email": "delete@gmail.com",
+    "email": "jxortiz15@gmail.com",
     "password": "password"
 }

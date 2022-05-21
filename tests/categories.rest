@@ -3,8 +3,13 @@ GET http://localhost:8080/categories
 
 ###
 // Get all categories of one user
-GET http://localhost:8080/categories/user/6268e3d12dd3c5ad708838d7
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjUxMzc1ODkzLCJleHAiOjE2NTE5ODA2OTN9.Gnaw2shZxiKLtxwxUgNYk3DcMXWVU_nNi64yfLtsoVE
+GET http://localhost:8080/categories/user/6268e2c5f4fdf4a54a8dd5d1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MzA5NzcwMiwiZXhwIjoxNjUzNzAyNTAyfQ.LbPACuFYvCXfHG7ACS-LbC1iIE702X0McUUiv-Obmi8
+
+###
+// Get all entries from a category
+GET http://localhost:8080/categories/category/626db74d518432f26dad65db
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MzA5NzcwMiwiZXhwIjoxNjUzNzAyNTAyfQ.LbPACuFYvCXfHG7ACS-LbC1iIE702X0McUUiv-Obmi8
 
 ###
 // Create one
