@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Entry = require("../models/entry");
+const {cloudinary} = require("../models/cloudinary");
 const jwtAuthentication = require("../validation/jwtAuthentication");
 
 /**
@@ -45,11 +46,21 @@ router.get("/:id", getEntry, (req, res, next) => {
 
 // Creating one
 router.post("/", jwtAuthentication, async (req, res) => {
+    let imageURL = null;
+    // If the image exists, then upload it to cloudinary
+    if(req.body.image != null) {
+        const fileStr = req.body.image;
+        const uploadedResponse = await cloudinary.uploader.upload(fileStr, {upload_preset: "entries"});
+        //console.log(uploadedResponse);
+        imageURL = uploadedResponse.url;
+    }
+
     // Creates new Entry object with request params
     const entry = new Entry({
         userId: res.authUser.id,
         body: req.body.body,
-        title: req.body.title
+        title: req.body.title,
+        imageURL: imageURL
     });
     try {
         // Saves to the db in async then returns the new entry
