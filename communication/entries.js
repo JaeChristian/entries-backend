@@ -84,6 +84,20 @@ router.patch("/:id", getEntry, jwtAuthentication, async (req, res) => {
     if (req.body.categoryId != null) {
         res.entry.categoryId = req.body.categoryId;
     }
+
+    // If an imageURL is sent as "" then nullify the current imageURL 
+    if(req.body.imageURL == "") {
+        res.entry.imageURL = null;
+    }
+
+    //If an image string is sent then upload a new image and set a new URL
+    if (req.body.image != null) {
+        const fileStr = req.body.image;
+        const uploadedResponse = await cloudinary.uploader.upload(fileStr, {upload_preset: "entries"});
+        //console.log(uploadedResponse);
+        imageURL = uploadedResponse.url;
+        res.entry.imageURL = uploadedResponse.url;
+    }
     if (res.authUser.id != res.entry.userId) {
         return res.status(401).json({message: "unauthorized to update this post"});
     }
