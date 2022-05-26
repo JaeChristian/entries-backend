@@ -21,6 +21,10 @@ const entrySchema = new mongoose.Schema({
         required: true,
         default: Date.now()
     },
+    color: {
+        type: String,
+        default: "gray"
+    },
     imageURL: {
         type: String
     }

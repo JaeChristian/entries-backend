@@ -84,6 +84,9 @@ router.patch("/:id", getEntry, jwtAuthentication, async (req, res) => {
     if (req.body.categoryId != null) {
         res.entry.categoryId = req.body.categoryId;
     }
+    if (req.body.color != null) {
+        res.entry.color = req.body.color;
+    }
 
     // If an imageURL is sent as "" then nullify the current imageURL 
     if(req.body.imageURL == "") {
