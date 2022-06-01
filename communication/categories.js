@@ -114,6 +114,11 @@ router.delete("/:id", getCategory, jwtAuthentication, async (req, res) => {
         }
 
         const deletedCategory = await res.category.delete();
+        // Reset all entry's with deleted category
+        const filter = {categoryId: res.category.id}
+        const resetCategory = {categoryId: ""}
+        const deletedEntries = await Entry.updateMany(filter, resetCategory);
+
         res.json(deletedCategory);
     } catch (err) {
         res.status(400).json({message: err.message});
