@@ -56,12 +56,18 @@ router.post("/", jwtAuthentication, async (req, res) => {
     }
 
     // Creates new Entry object with request params
-    const entry = new Entry({
+    let entry = new Entry({
         userId: res.authUser.id,
         body: req.body.body,
         title: req.body.title,
         imageURL: imageURL
     });
+
+    // Checks if a category Id is included
+    if (req.body.categoryId != null) {
+        entry.categoryId = req.body.categoryId;
+    }
+
     try {
         // Saves to the db in async then returns the new entry
         const newEntry = await entry.save();
