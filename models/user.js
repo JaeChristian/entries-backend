@@ -16,9 +16,18 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    visibility: {
-        type: Number,
+    public: {
+        type: Boolean,
+        default: false,
         required: true
+    },
+    bio: {
+        type: String
+    },
+    profileImageURL: {
+        type: String,
+        default: "http://res.cloudinary.com/izuchuku/image/upload/v1654473692/entries/xbg1fv86olvhu8mhyggi.jpg"
+
     }
 });
 

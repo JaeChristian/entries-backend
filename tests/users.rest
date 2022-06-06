@@ -1,12 +1,7 @@
 // Get all users
 GET http://localhost:8080/users/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MzA5NzcwMiwiZXhwIjoxNjUzNzAyNTAyfQ.LbPACuFYvCXfHG7ACS-LbC1iIE702X0McUUiv-Obmi8
-
-{
-    "username": "admin",
-    "pee": "poo"
-}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjU0NDczMjA3LCJleHAiOjE2NTUwNzgwMDd9.sFyYNTht7X88_j-icdmqGlgCdKpuKco-bHI2qovOVSs
 
 ###
 // Get one user
@@ -28,12 +23,12 @@ Content-Type: application/json
 // Update user
 PATCH http://localhost:8080/users/6268e3d12dd3c5ad708838d7
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlMmM1ZjRmZGY0YTU0YThkZDVkMSIsImVtYWlsIjoianhvcnRpejE1QGdtYWlsLmNvbSIsImlhdCI6MTY1MTE2MjM5NSwiZXhwIjoxNjUxNzY3MTk1fQ.py9Nj5pIm3KKd7rvPCmxZD-ekV9qaZIcBV1o5ood6cY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjU0NDczMjA3LCJleHAiOjE2NTUwNzgwMDd9.sFyYNTht7X88_j-icdmqGlgCdKpuKco-bHI2qovOVSs
 
 {
-    "email": "admin@gmail.com",
-    "username": "admin",
-    "password": "password"
+    "username": "Izuchuku",
+    "profileImageURL": "http://res.cloudinary.com/izuchuku/image/upload/v1654473692/entries/xbg1fv86olvhu8mhyggi.jpg",
+    "bio": "Suck my dick white America"
 }
 
 ###
@@ -48,6 +43,6 @@ POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-    "email": "jxortiz15@gmail.com",
+    "email": "admin@gmail.com",
     "password": "password"
 }

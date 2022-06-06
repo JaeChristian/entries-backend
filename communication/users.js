@@ -35,8 +35,7 @@ router.post("/", async (req, res) => {
     const user = new User({
         email: req.body.email,
         username: req.body.username,
-        password: password,
-        visibility: 0
+        password: password
     });
     
     try {
@@ -63,8 +62,14 @@ router.patch("/:id", getUser, jwtAuthentication, async (req, res) => {
         const password = await bcrypt.hash(req.body.password, salt);
         res.user.password = password
     }
-    if(req.body.visibility != null) {
-        res.user.visibility = req.body.visibility;
+    if(req.body.public != null) {
+        res.user.public = req.body.visibility;
+    }
+    if(req.body.bio != null) {
+        res.user.bio = req.body.bio;
+    } 
+    if(req.body.profileImageURL != null) {
+        res.user.profileImageURL = req.body.profileImageURL;
     }
 
     try {
