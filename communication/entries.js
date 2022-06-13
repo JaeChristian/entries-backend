@@ -30,7 +30,7 @@ router.get("/user/:userId", jwtAuthentication, async (req, res) => {
         // Uses mongo db in an async manner
         const entries = await Entry.find({userId: userId});
         // Send entries json with response
-        res.json(entries);
+        res.json(entries.reverse());
     } catch (err) {
 
         // Return with a 500 server error
