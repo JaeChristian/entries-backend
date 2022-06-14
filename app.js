@@ -7,7 +7,7 @@ const app = express();
 
 // environmental port
 const PORT = process.env.PORT || 8080;
-
+//
 // connect to MongoDB
 const dbURI = "mongodb+srv://jay:december15@diaryappcluster.ptgwb.mongodb.net/diary-app?retryWrites=true&w=majority";
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
