@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const cors = require("cors");
 
 // express app
 const app = express();
@@ -20,6 +21,7 @@ db.on("error", (error) => console.error(error))
 db.once("open", () => console.log("Connected to Database"))
 
 app.use(express.json({limit: "50mb"}));
+app.use(cors());
 
 //Route handling for entries
 const entriesRouter = require("./communication/entries");
