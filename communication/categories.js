@@ -53,9 +53,9 @@ router.get("/category/:id", getCategory, jwtAuthentication, async (req, res) => 
             return res.status(401).json({message: "unauthorized"});
         }
         // Find category
-        const categories = await Entry.find({categoryId: categoryId});
+        const entries = await Entry.find({categoryId: categoryId});
         // Send entries json with response
-        res.json(categories);
+        res.json(entries.reverse());
     } catch (err) {
         // Return with a 500 server error
         res.status(500).json({message: err.message})
