@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
+const jwtAuthentication = require("./validation/jwtAuthentication");
 
 // express app
 const app = express();
@@ -35,3 +36,8 @@ app.use("/users", usersRouter);
 
 const loginRouter = require("./communication/login");
 app.use("/login", loginRouter);
+
+// Route simply for authenticating a jwt token and checking if it is expired.
+// If an error occurs when this endpoint is called, then the jwt token is invalid or expired.
+app.post("/jwtAuth", jwtAuthentication, async(req, res) => {
+})
