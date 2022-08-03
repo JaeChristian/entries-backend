@@ -23,12 +23,11 @@ Content-Type: application/json
 // Update user
 PATCH http://localhost:8080/users/6268e3d12dd3c5ad708838d7
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjU0NDczMjA3LCJleHAiOjE2NTUwNzgwMDd9.sFyYNTht7X88_j-icdmqGlgCdKpuKco-bHI2qovOVSs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjhlM2QxMmRkM2M1YWQ3MDg4MzhkNyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjU5MjI5ODI2LCJleHAiOjE2NTk4MzQ2MjZ9.ayfPtrN-rS8z45Q9qOeQCiyyLZ6g6reNYsuI_m5rqbU
 
 {
-    "username": "Izuchuku",
-    "profileImageURL": "http://res.cloudinary.com/izuchuku/image/upload/v1654473692/entries/xbg1fv86olvhu8mhyggi.jpg",
-    "bio": "Suck my dick white America"
+    "password": "december15",
+    "bio": "Developer of Entries"
 }
 
 ###

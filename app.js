@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 //
 // connect to MongoDB
-const dbURI = "mongodb+srv://jay:december15@diaryappcluster.ptgwb.mongodb.net/diary-app?retryWrites=true&w=majority";
+const dbURI = process.env.dbURI;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
     .then((res) => {
         app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
